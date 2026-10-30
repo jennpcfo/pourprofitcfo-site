@@ -21,7 +21,7 @@ spec:
           matchLabels: {app: site}
       containers:
       - name: nginx
-        image: ghcr.io/jennpcfo/pourprofitcfo-site:IMAGE_TAG
+        image: ghcr.io/jennpcfo/pourprofitcfo-site:7668f7052a071b97b1ed112f239cd37df8099513
         ports:
         - containerPort: 8080
         readinessProbe:
