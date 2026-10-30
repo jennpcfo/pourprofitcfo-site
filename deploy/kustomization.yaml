@@ -1,0 +1,9 @@
+# Argo CD deploys this folder. The pipeline (jennpcfo/ci) rewrites newTag after every merge to
+# main, so the cluster always runs a named commit, never "latest".
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+images:
+- name: ghcr.io/jennpcfo/pourprofitcfo-site
+  newTag: "7668f7052a071b97b1ed112f239cd37df8099513"

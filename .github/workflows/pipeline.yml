@@ -1,0 +1,15 @@
+# Test on every pull request; on merge to main, publish and deploy. The steps live in jennpcfo/ci.
+name: pipeline
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore: ["deploy/**", "**.md"]
+permissions:
+  contents: write
+  packages: write
+jobs:
+  app:
+    uses: jennpcfo/ci/.github/workflows/app.yml@v1
+    with:
+      image: ghcr.io/jennpcfo/pourprofitcfo-site
