@@ -6,4 +6,4 @@ resources:
 - deployment.yaml
 images:
 - name: ghcr.io/jennpcfo/pourprofitcfo-site
-  newTag: "dbab2af33d73e0e98bf4b209bcbb52a60037c8b1"
+  newTag: "ad302fe593e2fbc925fee32299341e4a06a85838"
