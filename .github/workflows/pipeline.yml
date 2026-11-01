@@ -10,6 +10,6 @@ permissions:
   packages: write
 jobs:
   app:
-    uses: jennpcfo/ci/.github/workflows/app.yml@v1
+    uses: jennpcfo/ci/.github/workflows/app.yml@3653d0d23c53f28dbc197925cb06baaaf737039f # TODO: v1 commit after jennpcfo/ci#1 merges
     with:
       image: ghcr.io/jennpcfo/pourprofitcfo-site
