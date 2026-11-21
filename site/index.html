@@ -4,414 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pour Profit CFO Group</title>
-<meta name="description" content="Fractional CFO advisory for concrete contractors doing $1M–$10M a year. Job costing, cash flow visibility, and monthly advisory built for the trade.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="description" content="Fractional CFO for concrete contractors. Find out whether your prices cover your overhead, your pay and the profit you want: take the free Profit Slump Test, or start with the $950 Overhead Check.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #FAF8F3;
-    --bg-alt: #ECE7DC;
-    --surface: #FFFFFF;
-    --ink: #1C1A16;
-    --ink-soft: #5B5548;
-    --ink-faint: #8A8373;
-    --line: #DAD3C3;
-    --accent: #B84A0F;
-    --accent-hi: #D65A16;
-    --accent-tint: #F4DFC9;
-    --accent-ink: #FFFFFF;
-    --focus: #2B6CB0;
-    --display: "Big Shoulders Display", "Arial Narrow", sans-serif;
-    --body: "Public Sans", -apple-system, "Segoe UI", sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
-    --w: 1180px;
-  }
-
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg: #17150F;
-      --bg-alt: #201D15;
-      --surface: #1D1A13;
-      --ink: #F3EFE4;
-      --ink-soft: #C2BAA6;
-      --ink-faint: #8D8570;
-      --line: #37321F;
-      --accent: #E06A1E;
-      --accent-hi: #F07E30;
-      --accent-tint: #3A2412;
-      --accent-ink: #17150F;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg: #17150F;
-    --bg-alt: #201D15;
-    --surface: #1D1A13;
-    --ink: #F3EFE4;
-    --ink-soft: #C2BAA6;
-    --ink-faint: #8D8570;
-    --line: #37321F;
-    --accent: #E06A1E;
-    --accent-hi: #F07E30;
-    --accent-tint: #3A2412;
-    --accent-ink: #17150F;
-  }
-
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--body);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  h1,h2,h3{
-    font-family: var(--display);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
-    line-height: 0.98;
-    text-wrap: balance;
-    margin: 0;
-    color: var(--ink);
-  }
-  p{ margin: 0; }
-  a{ color: inherit; }
-  img,svg{ max-width: 100%; }
-  ::selection{ background: var(--accent-tint); color: var(--ink); }
-  :focus-visible{ outline: 2.5px solid var(--focus); outline-offset: 3px; }
-
-  .wrap{
-    max-width: var(--w);
-    margin: 0 auto;
-    padding-inline: clamp(20px, 5vw, 56px);
-  }
-  section{ padding-block: clamp(48px, 8vw, 92px); }
-
-  .joint{
-    border-top: 1px dashed var(--line);
-    position: relative;
-  }
-  .joint::before{
-    content: "";
-    position: absolute;
-    top: -3px; left: 50%;
-    transform: translateX(-50%);
-    width: 5px; height: 5px;
-    background: var(--accent);
-  }
-
-  .eyebrow{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-  }
-
-  .btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--body);
-    font-weight: 700;
-    font-size: 0.98rem;
-    padding: 15px 26px;
-    border: 2px solid var(--accent);
-    background: var(--accent);
-    color: var(--accent-ink);
-    text-decoration: none;
-    border-radius: 3px;
-    white-space: nowrap;
-    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
-  }
-  .btn:hover{ transform: translateY(-1px); }
-  .btn:active{ transform: translateY(0); }
-  .btn-ghost{
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--line);
-  }
-  .btn-ghost:hover{ border-color: var(--ink-soft); }
-  .btn-on-accent{
-    background: var(--surface);
-    border-color: var(--surface);
-    color: var(--ink);
-  }
-  .btn-on-accent:hover{ background: transparent; color: var(--accent-ink); border-color: var(--accent-ink); }
-  .btn svg{ width: 16px; height: 16px; flex: none; }
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding-block: 20px;
-  }
-  .brandmark{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .brandmark .mark-icon{ width: 34px; height: 34px; flex: none; }
-  .brandmark .btext{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    line-height: 1;
-  }
-  .brandmark .bline1{
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: 0.005em;
-    color: var(--ink);
-    white-space: nowrap;
-  }
-  .brandmark .bline2{
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .brandmark .bline2 .rule{
-    width: 14px;
-    height: 1px;
-    background: var(--line);
-    flex: none;
-  }
-  .brandmark .bline2 .txt{
-    font-family: var(--mono);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.66rem;
-    letter-spacing: 0.15em;
-    color: var(--ink-faint);
-    white-space: nowrap;
-  }
-  .topbar .btn{ padding: 10px 18px; font-size: 0.85rem; }
-
-  /* ---------- hero ---------- */
-  .hero{
-    position: relative;
-    padding-block: clamp(40px, 9vw, 96px) clamp(56px, 10vw, 108px);
-    background-image:
-      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 64px),
-      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 64px);
-    background-position: center top;
-    background-size: 100% 100%;
-    opacity: 1;
-  }
-  .hero-inner{ position: relative; max-width: 780px; }
-  .hero h1{
-    font-size: clamp(2.3rem, 5.6vw, 4.3rem);
-    margin-top: 14px;
-  }
-  .hero h1 em{
-    font-style: normal;
-    color: var(--accent);
-  }
-  .hero .sub{
-    margin-top: 22px;
-    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-    color: var(--ink-soft);
-    max-width: 56ch;
-  }
-  .hero .cta-row{ margin-top: 34px; }
-  .hero .fine{
-    margin-top: 14px;
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--ink-faint);
-    letter-spacing: 0.03em;
-  }
-
-  /* ---------- problem ---------- */
-  .problem{ background: var(--bg-alt); }
-  .problem .head{ max-width: 640px; }
-  .problem h2{ font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-top: 10px; }
-  .problem-grid{
-    margin-top: 44px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .problem-item{
-    background: var(--bg-alt);
-    padding: 28px 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .problem-item svg{ width: 26px; height: 26px; color: var(--accent); flex: none; }
-  .problem-item p{ font-size: 1.02rem; font-weight: 600; }
-  .problem-tie{
-    margin-top: 40px;
-    padding-top: 28px;
-    border-top: 2px solid var(--ink);
-    font-family: var(--display);
-    text-transform: uppercase;
-    font-size: clamp(1.15rem, 2.4vw, 1.55rem);
-    font-weight: 700;
-    max-width: 46ch;
-  }
-  .problem-tie .no{ color: var(--ink-faint); }
-  .problem-tie .yes{ color: var(--accent); }
-
-  /* ---------- solution ---------- */
-  .solution h2{ font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-top: 10px; max-width: 18ch; }
-  .pillars{
-    margin-top: 44px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .pillar{
-    border-top: 3px solid var(--accent);
-    padding-top: 20px;
-  }
-  .pillar svg{ width: 30px; height: 30px; color: var(--ink); }
-  .pillar h3{
-    margin-top: 18px;
-    font-size: 1.15rem;
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: 700;
-  }
-  .solution .lede{
-    margin-top: 46px;
-    max-width: 68ch;
-    font-size: 1.08rem;
-    color: var(--ink-soft);
-    padding-top: 28px;
-    border-top: 1px solid var(--line);
-  }
-
-  /* ---------- audience ---------- */
-  .audience{ background: var(--bg-alt); }
-  .audience-grid{
-    display: grid;
-    grid-template-columns: minmax(220px, 380px) 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-  .audience .stat{
-    font-family: var(--mono);
-    font-weight: 600;
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-    line-height: 1;
-  }
-  .audience .stat-label{
-    margin-top: 10px;
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-  .audience h2{ font-size: clamp(1.6rem, 3vw, 2.15rem); margin-top: 16px; }
-  .audience p{ margin-top: 20px; font-size: 1.08rem; color: var(--ink-soft); max-width: 62ch; }
-  .audience strong{ color: var(--ink); }
-
-  /* ---------- process ---------- */
-  .process h2{ font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-top: 10px; }
-  .steps{
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    position: relative;
-  }
-  .step{
-    padding: 0 28px 0 0;
-    position: relative;
-  }
-  .step:not(:first-child){
-    padding-left: 28px;
-    border-left: 1px dashed var(--line);
-  }
-  .step .num{
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--ink-faint);
-    letter-spacing: 0.06em;
-  }
-  .step svg{ width: 28px; height: 28px; color: var(--accent); margin-top: 14px; }
-  .step h3{
-    margin-top: 16px;
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-weight: 800;
-  }
-  .step p{ margin-top: 10px; color: var(--ink-soft); font-size: 0.98rem; }
-
-  /* ---------- cta band ---------- */
-  .cta-band{
-    background: var(--accent);
-    color: var(--accent-ink);
-  }
-  .cta-band h2{ color: var(--accent-ink); font-size: clamp(1.9rem, 4.4vw, 3rem); }
-  .cta-band .row{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 26px;
-    margin-top: 30px;
-  }
-  .cta-band .note{
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--accent-ink);
-    opacity: 0.85;
-  }
-  .cta-band .note a{ text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: 3px; }
-
-  /* ---------- footer ---------- */
-  footer{
-    padding-block: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 32px;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-  footer .brandmark .mark-icon{ width: 28px; height: 28px; }
-  footer .brandmark .bline1{ font-size: 1rem; }
-  footer .fmeta{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 28px;
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-  }
-  footer a{ text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-
-  @media (max-width: 760px){
-    .problem-grid{ grid-template-columns: 1fr; }
-    .pillars{ grid-template-columns: 1fr; gap: 32px; }
-    .audience-grid{ grid-template-columns: 1fr; }
-    .steps{ grid-template-columns: 1fr; gap: 32px; }
-    .step:not(:first-child){ padding-left: 0; border-left: none; padding-top: 28px; border-top: 1px dashed var(--line); }
-    .cta-band .row{ flex-direction: column; align-items: flex-start; }
-    footer{ flex-direction: column; align-items: flex-start; }
-  }
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <header class="wrap topbar">
-  <div class="brandmark">
+  <a class="brandmark" href="/" aria-label="Pour Profit CFO Group, home">
     <svg class="mark-icon" viewBox="0 0 32 32" aria-hidden="true">
       <rect x="3" y="20" width="4.2" height="6" rx="0.6" fill="var(--ink)"/>
       <rect x="9.6" y="16" width="4.2" height="10" rx="0.6" fill="var(--ink)"/>
@@ -420,114 +25,194 @@
       <path d="M3 24.5 L11 15 L17.5 19 L28 5" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M21.5 5 L28.3 4.3 L28.8 11.1" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <div class="btext">
-      <div class="bline1">Pour Profit</div>
-      <div class="bline2"><span class="rule"></span><span class="txt">CFO Group</span><span class="rule"></span></div>
-    </div>
-  </div>
-  <a class="btn" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">
-    Book a Free Profit Review
+    <span class="btext">
+      <span class="bline1">Pour Profit</span>
+      <span class="bline2"><span class="rule"></span><span class="txt">CFO Group</span><span class="rule"></span></span>
+    </span>
   </a>
+  <nav class="nav" aria-label="Main">
+    <a href="/profit-slump-test/">Free test</a>
+    <a href="#overhead-check">Overhead Check</a>
+    <a href="#how-it-works">How it works</a>
+    <a class="btn" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">Book a free call</a>
+  </nav>
 </header>
+
+<main>
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="eyebrow">Fractional CFO / Concrete Contractors</div>
-    <h1>You bid concrete jobs. We show you which ones <em>actually</em> make money.</h1>
-    <p class="sub">Pour Profit CFO Group helps concrete contractors stop guessing on job costs, protect cash flow, and finally know their real margins.</p>
-    <div class="cta-row">
-      <a class="btn" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">
-        Book a Free Profit Review
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div class="eyebrow">Fractional CFO / Concrete contractors</div>
+    <h1>Busy all year. So where is the <em>profit</em>?</h1>
+    <p class="sub">Pour Profit CFO Group shows concrete contractors whether their prices cover their overhead, their own pay and the profit they want, and helps them fix it when they don't.</p>
+    <div class="btn-row">
+      <a class="btn" href="/profit-slump-test/">
+        Take the free Profit Slump Test
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
+      <a class="btn btn-ghost" href="#overhead-check">See the $950 Overhead Check</a>
     </div>
-    <div class="fine">NO RETAINER PITCH ON THE FIRST CALL &mdash; JUST YOUR NUMBERS</div>
+    <p class="fine">9 QUESTIONS &middot; ABOUT 2 MINUTES &middot; YOUR RESULT ON THE SPOT</p>
   </div>
 </section>
 
-<section class="problem joint">
+<section class="alt">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">The Problem</div>
-      <h2>Most concrete contractors are flying blind.</h2>
-    </div>
+    <div class="eyebrow">The problem</div>
+    <h2 class="h2">More work. Same money. Sound familiar?</h2>
     <div class="problem-grid">
       <div class="problem-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v5"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/></svg>
-        <p>You bid jobs based on gut feel, not real numbers.</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v5"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+        <p>You price with a markup that has "always worked."</p>
       </div>
       <div class="problem-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v5"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/></svg>
-        <p>Payroll, materials, and equipment costs show up late.</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v5"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+        <p>Trucks, insurance, the shop and payroll keep climbing.</p>
       </div>
       <div class="problem-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v5"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/></svg>
-        <p>You work harder every month but keep less.</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v5"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+        <p>You work harder every year and keep less.</p>
       </div>
     </div>
-    <div class="problem-tie"><span class="no">That is not a work ethic problem.</span> <span class="yes">It is a visibility problem.</span></div>
+    <div class="problem-tie"><span class="no">That is not a work ethic problem.</span> <span class="yes">It is a pricing problem you can't see yet.</span></div>
   </div>
 </section>
 
-<section class="solution joint">
-  <div class="wrap">
-    <div class="eyebrow">The Solution</div>
-    <h2>Profit clarity, built for concrete contractors.</h2>
-    <div class="pillars">
-      <div class="pillar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-        <h3>Job costing that actually matches reality.</h3>
-      </div>
-      <div class="pillar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 3 3"/><path d="M3 10c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 3 3"/></svg>
-        <h3>Cash flow you can see before Friday.</h3>
-      </div>
-      <div class="pillar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 15 3-6 3 6-3-1.8L9 15Z"/></svg>
-        <h3>Monthly CFO advisory that tells you what to do next.</h3>
-      </div>
-    </div>
-    <p class="lede">We clean up your books, build a job-costing system, and meet with you monthly so you know which jobs to take, which to pass on, and where the money is hiding.</p>
-  </div>
-</section>
-
-<section class="audience joint">
-  <div class="wrap audience-grid">
+<section>
+  <div class="wrap test-band">
     <div>
-      <div class="stat">$1M&ndash;$10M</div>
-      <div class="stat-label">Annual Revenue</div>
+      <div class="eyebrow">Free &middot; Start here</div>
+      <h2 class="h2">The Profit Slump Test</h2>
+      <p class="lede">On the job, a slump test tells you whether the mix will hold. This one tells you whether your profit will. Answer nine quick questions about how you price, pay yourself and track jobs, and see your result right away. Nothing to send us, no sign-up.</p>
+      <div class="btn-row">
+        <a class="btn" href="/profit-slump-test/">
+          Take the test
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
-    <div>
-      <div class="eyebrow">Who It Is For</div>
-      <h2>Built for concrete contractors doing $1M to $10M a year.</h2>
-      <p>You have <strong>crews, equipment, and real overhead.</strong> You do not need another bookkeeper. You need a financial partner who understands mud, margins, and mobilization.</p>
+    <svg class="meter" viewBox="0 0 200 120" aria-hidden="true">
+      <path d="M20 105 A80 80 0 0 1 180 105" fill="none" stroke="var(--line)" stroke-width="16"/>
+      <path d="M20 105 A80 80 0 0 1 100 25" fill="none" stroke="currentColor" stroke-width="16"/>
+      <line x1="100" y1="105" x2="152" y2="52" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="100" cy="105" r="8" fill="var(--ink)"/>
+    </svg>
+  </div>
+</section>
+
+<section class="alt" id="overhead-check">
+  <div class="wrap">
+    <div class="offer-head">
+      <div>
+        <div class="eyebrow">The first paid step</div>
+        <h2 class="h2">The Overhead Check</h2>
+        <p class="lede">Are your prices covering what it costs to run your business? The Overhead Check answers that in plain numbers, and if they aren't, shows you how far off they are.</p>
+      </div>
+      <div>
+        <div class="price">$950</div>
+        <div class="price-note">Results in 5 business days</div>
+      </div>
+    </div>
+
+    <div class="cols3">
+      <div class="col">
+        <h3>What you send</h3>
+        <p class="sm">Usually under an hour to pull together</p>
+        <ul class="ticks">
+          <li>Your Profit and Loss for the last two full years</li>
+          <li>Your balance sheets at the end of those years</li>
+          <li>What you paid yourself, through payroll and in draws</li>
+          <li>Two or three recent bids</li>
+          <li>Your profit goal, if you have one</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>What we do</h3>
+        <p class="sm">What's happening against what should be</p>
+        <ul class="ticks">
+          <li><strong>Your pay</strong> against fair pay for your role</li>
+          <li><strong>Your margin</strong> against the margin you need, loan payments included</li>
+          <li><strong>Your profit</strong> against your goal</li>
+          <li>A check of how your bids are built</li>
+          <li>Your overhead sorted into six plain categories</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>What you get</h3>
+        <p class="sm">Short, plain English, no jargon</p>
+        <ul class="ticks">
+          <li>A short report with the yearly gap in dollars (an estimate, never a promise)</li>
+          <li>Your three most important next steps</li>
+          <li>A 45-minute results call with Jenn</li>
+          <li>Your own client portal to send records and see your report</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="credit">
+      <p><strong>The $950 counts toward the INSPECTION.</strong> If you decide to go deeper, it is credited in full toward the next step.</p>
+      <a class="btn" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">Book a free call to get started</a>
     </div>
   </div>
 </section>
 
-<section class="process joint">
+<section id="how-it-works">
   <div class="wrap">
-    <div class="eyebrow">How It Works</div>
-    <h2>Three steps to profit clarity.</h2>
-    <div class="steps">
-      <div class="step">
+    <div class="eyebrow">How it works</div>
+    <h2 class="h2">From one check to a business that runs on real numbers.</h2>
+    <p class="lede">Every step stands on its own. You keep what you've paid for, and you decide at each stop whether to keep going.</p>
+    <div class="path">
+      <div class="stop">
         <div class="num">01</div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.35-4.35"/></svg>
-        <h3>Diagnose</h3>
-        <p>We review your books, bids, and cash flow.</p>
+        <h3>Overhead Check</h3>
+        <span class="tag">$950</span>
+        <p>Find out whether your prices cover your overhead, your pay and your profit goal, and how big the gap is.</p>
       </div>
-      <div class="step">
+      <div class="stop">
         <div class="num">02</div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.7 2.7-2-.5-.5-2 2.7-2.7Z"/></svg>
-        <h3>Build</h3>
-        <p>We set up job costing and a weekly cash rhythm.</p>
+        <h3>INSPECTION</h3>
+        <span class="tag">$3,500 &middot; about 2 weeks</span>
+        <p>A full review of your profit, jobs, pricing, cash and systems. We name your Top 3 Profit Leaks. You keep the findings whether or not you continue.</p>
       </div>
-      <div class="step">
+      <div class="stop">
         <div class="num">03</div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v13a1 1 0 0 0 1 1h5l4 4v-4h5a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1Z"/><path d="M8 9h8M8 13h5"/></svg>
-        <h3>Advise</h3>
-        <p>We meet monthly to keep you profitable and growing.</p>
+        <h3>PROFIT TRANSFORMATION INTENSIVE</h3>
+        <span class="tag">6 to 8 weeks after INSPECTION</span>
+        <p>Fix the leaks, build books and job reports you can trust, turn them into better bids, and hand your team a system it can run.</p>
+        <div class="steps-mini"><span>TEAR OUT</span><span>FOUNDATION</span><span>POUR</span><span>FINISH</span></div>
       </div>
+    </div>
+    <div class="addons">
+      <div class="label">Optional, after the Intensive</div>
+      <div>
+        <h3>SEAL</h3>
+        <p>90 days of guided practice while your team takes the system over.</p>
+      </div>
+      <div>
+        <h3>MAINTENANCE</h3>
+        <p>Ongoing fractional CFO oversight, with a monthly close and a monthly meeting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap two">
+    <div>
+      <div class="eyebrow">Who it's for</div>
+      <div class="stat">$1M&ndash;$15M</div>
+      <div class="stat-label">Established concrete contractors, by yearly sales</div>
+      <ul class="ticks" style="margin-top:24px">
+        <li>Busy, but not seeing the profit you expected</li>
+        <li>Pricing with a flat markup or "what the market will bear"</li>
+        <li>Paying yourself less than the job is worth</li>
+        <li>Never seen your break-even margin written down</li>
+      </ul>
+    </div>
+    <div>
+      <div class="eyebrow">Our promise</div>
+      <p class="promise">Real numbers, <em>labeled honestly.</em></p>
+      <p class="lede">We never call an estimate a result, and we never call a gap fixed when it isn't. You run your business; we analyze, advise and show your team how. You don't need another bookkeeper. You need a financial partner who understands mud, margins and mobilization.</p>
     </div>
   </div>
 </section>
@@ -535,18 +220,18 @@
 <section class="cta-band">
   <div class="wrap">
     <h2>Stop guessing. Start knowing.</h2>
-    <div class="row">
-      <a class="btn btn-on-accent" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">
-        Book a Free Profit Review
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <div class="note">No pressure. No pitch deck. Just a conversation about your numbers.</div>
+    <p>Take the free test and see where you stand in two minutes, or book a free call and talk through your numbers with Jenn.</p>
+    <div class="btn-row">
+      <a class="btn btn-on-accent" href="/profit-slump-test/">Take the free Profit Slump Test</a>
+      <a class="btn btn-line-on-accent" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">Book a free call</a>
     </div>
   </div>
 </section>
 
-<footer class="wrap joint">
-  <div class="brandmark">
+</main>
+
+<footer class="wrap">
+  <a class="brandmark" href="/" aria-label="Pour Profit CFO Group, home">
     <svg class="mark-icon" viewBox="0 0 32 32" aria-hidden="true">
       <rect x="3" y="20" width="4.2" height="6" rx="0.6" fill="var(--ink)"/>
       <rect x="9.6" y="16" width="4.2" height="10" rx="0.6" fill="var(--ink)"/>
@@ -555,12 +240,13 @@
       <path d="M3 24.5 L11 15 L17.5 19 L28 5" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M21.5 5 L28.3 4.3 L28.8 11.1" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <div class="btext">
-      <div class="bline1">Pour Profit</div>
-      <div class="bline2"><span class="rule"></span><span class="txt">CFO Group</span><span class="rule"></span></div>
-    </div>
-  </div>
+    <span class="btext">
+      <span class="bline1">Pour Profit</span>
+      <span class="bline2"><span class="rule"></span><span class="txt">CFO Group</span><span class="rule"></span></span>
+    </span>
+  </a>
   <div class="fmeta">
+    <a href="/profit-slump-test/">Profit Slump Test</a>
     <a href="mailto:jennifer@pourprofitcfo.com">jennifer@pourprofitcfo.com</a>
   </div>
 </footer>
