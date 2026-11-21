@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080909">
 <title>Profit Slump Test | Pour Profit CFO Group</title>
 <meta name="description" content="A free two-minute test for concrete contractors: nine questions about how you price, pay yourself and track jobs, and your result on the spot.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -14,21 +15,21 @@
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   .quiz{ max-width: 760px; margin: 0 auto; padding-block: clamp(28px, 6vw, 64px) clamp(48px, 8vw, 92px); }
-  .quiz h1{ font-size: clamp(2.1rem, 5vw, 3.4rem); margin-top: 12px; }
+  .quiz h1{ font-size: clamp(2.6rem, 6vw, 4.4rem); margin-top: 12px; }
   .progress{ margin-top: 28px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
-  .progress span{ display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.25s ease; }
+  .progress span{ display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent-deep), var(--accent-hi)); transition: width 0.25s ease; }
   .qcount{ margin-top: 10px; }
-  .card{ margin-top: 26px; background: var(--surface); border: 1px solid var(--line); padding: clamp(20px, 4vw, 34px); border-radius: 3px; }
+  .card{ margin-top: 26px; background: linear-gradient(145deg, #1a1d1d, #111313); border: 1px solid var(--line); border-top: 4px solid var(--accent); padding: clamp(20px, 4vw, 34px); border-radius: 5px; }
   .card h2{ font-size: clamp(1.4rem, 3vw, 1.9rem); text-transform: none; font-family: var(--body); font-weight: 700; line-height: 1.2; letter-spacing: 0; }
   .card .hint{ margin-top: 8px; color: var(--ink-soft); font-size: 0.95rem; }
   .opts{ margin-top: 22px; display: grid; gap: 10px; }
   .opt{
     display: block; width: 100%; text-align: left; font: inherit; font-size: 1.02rem; color: var(--ink);
-    background: var(--bg); border: 2px solid var(--line); border-radius: 3px; padding: 14px 18px; cursor: pointer;
+    background: #0d0f0f; border: 1px solid var(--line); border-radius: 4px; padding: 14px 18px; cursor: pointer;
     transition: border-color 0.12s ease, background 0.12s ease;
   }
-  .opt:hover{ border-color: var(--ink-soft); }
-  .opt[aria-pressed="true"]{ border-color: var(--accent); background: var(--accent-tint); }
+  .opt:hover{ border-color: var(--accent); }
+  .opt[aria-pressed="true"]{ border-color: var(--accent-hi); background: var(--accent-tint); color: var(--accent-hi); }
   .nav-row{ margin-top: 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .linkbtn{ background: none; border: none; font: inherit; font-weight: 600; color: var(--ink-soft); cursor: pointer; padding: 6px 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line); }
   .linkbtn:hover{ color: var(--ink); }
@@ -36,20 +37,20 @@
 
   .result-top{ display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
   .gauge{ width: 180px; }
-  .level{ font-family: var(--display); text-transform: uppercase; font-weight: 800; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; }
-  .level.l0{ color: var(--good); } .level.l1{ color: var(--warn); } .level.l2, .level.l3{ color: var(--accent); }
+  .level{ font-family: var(--display); text-transform: uppercase; font-weight: 900; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; }
+  .level.l0{ color: var(--good); } .level.l1{ color: var(--warn); } .level.l2, .level.l3{ color: var(--bad); }
   .score-line{ margin-top: 8px; font-family: var(--mono); font-size: 0.85rem; color: var(--ink-faint); letter-spacing: 0.04em; }
   .result p.what{ margin-top: 18px; font-size: 1.05rem; color: var(--ink-soft); }
-  .r-h{ margin-top: 30px; font-size: 1.15rem; letter-spacing: 0.04em; }
+  .r-h{ margin-top: 30px; font-size: 1.35rem; letter-spacing: 0.04em; }
   .signals{ margin-top: 14px; display: grid; gap: 12px; }
-  .signals li{ padding: 14px 16px; border-left: 4px solid var(--accent); background: var(--bg); }
+  .signals li{ padding: 14px 16px; border-left: 4px solid var(--accent); background: #0d0f0f; border-radius: 0 4px 4px 0; }
   .signals strong{ display: block; }
   .signals span{ display: block; margin-top: 4px; color: var(--ink-soft); font-size: 0.96rem; }
-  .money{ margin-top: 14px; padding: 18px 20px; background: var(--bg-alt); border-radius: 3px; }
-  .money .big{ font-family: var(--mono); font-weight: 600; font-size: clamp(1.5rem, 4vw, 2rem); color: var(--accent); font-variant-numeric: tabular-nums; }
+  .money{ margin-top: 14px; padding: 18px 20px; background: var(--accent-tint); border: 1px solid rgba(224,165,30,.35); border-left: 4px solid var(--accent); border-radius: 4px; }
+  .money .big{ font-family: var(--display); font-weight: 900; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; color: var(--accent-hi); font-variant-numeric: tabular-nums; }
   .money p{ margin-top: 6px; color: var(--ink-soft); }
-  .next{ margin-top: 30px; padding: 24px; border: 2px solid var(--accent); border-radius: 3px; }
-  .next h3{ font-size: 1.5rem; }
+  .next{ margin-top: 30px; padding: 24px; background: #0d0f0f; border: 1px solid rgba(224,165,30,.5); border-radius: 5px; box-shadow: 0 0 0 1px rgba(224,165,30,.12), 0 18px 40px rgba(0,0,0,.35); }
+  .next h3{ font-size: 1.9rem; }
   .next p{ margin-top: 10px; color: var(--ink-soft); }
   .next .btn-row{ margin-top: 20px; }
   .small-print{ margin-top: 24px; font-size: 0.85rem; color: var(--ink-faint); }
@@ -61,27 +62,17 @@
 </head>
 <body>
 
-<header class="wrap topbar">
-  <a class="brandmark" href="/" aria-label="Pour Profit CFO Group, home">
-    <svg class="mark-icon" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="3" y="20" width="4.2" height="6" rx="0.6" fill="var(--ink)"/>
-      <rect x="9.6" y="16" width="4.2" height="10" rx="0.6" fill="var(--ink)"/>
-      <rect x="16.2" y="12" width="4.2" height="14" rx="0.6" fill="var(--ink)"/>
-      <rect x="22.8" y="7" width="4.2" height="19" rx="0.6" fill="var(--ink)"/>
-      <path d="M3 24.5 L11 15 L17.5 19 L28 5" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M21.5 5 L28.3 4.3 L28.8 11.1" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="btext">
-      <span class="bline1">Pour Profit</span>
-      <span class="bline2"><span class="rule"></span><span class="txt">CFO Group</span><span class="rule"></span></span>
-    </span>
+<div class="topbar-band"><header class="wrap topbar">
+  <a class="wordmark" href="/" aria-label="Pour Profit CFO Group, home">
+    <img src="/assets/emblem-128.png" alt="" width="48" height="48">
+    <span class="w1">POUR PROFIT</span><span class="w2">CFO GROUP</span>
   </a>
   <nav class="nav" aria-label="Main">
     <a href="/#overhead-check">Overhead Check</a>
     <a href="/#how-it-works">How it works</a>
     <a class="btn" href="https://calendar.app.google/zRN99heED6kefWTYA" target="_blank" rel="noopener">Book a free call</a>
   </nav>
-</header>
+</header></div>
 
 <main class="wrap">
   <div class="quiz">
@@ -99,26 +90,17 @@
   </div>
 </main>
 
-<footer class="wrap">
-  <a class="brandmark" href="/" aria-label="Pour Profit CFO Group, home">
-    <svg class="mark-icon" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="3" y="20" width="4.2" height="6" rx="0.6" fill="var(--ink)"/>
-      <rect x="9.6" y="16" width="4.2" height="10" rx="0.6" fill="var(--ink)"/>
-      <rect x="16.2" y="12" width="4.2" height="14" rx="0.6" fill="var(--ink)"/>
-      <rect x="22.8" y="7" width="4.2" height="19" rx="0.6" fill="var(--ink)"/>
-      <path d="M3 24.5 L11 15 L17.5 19 L28 5" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M21.5 5 L28.3 4.3 L28.8 11.1" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="btext">
-      <span class="bline1">Pour Profit</span>
-      <span class="bline2"><span class="rule"></span><span class="txt">CFO Group</span><span class="rule"></span></span>
-    </span>
+<div class="footer-band"><footer class="wrap">
+  <a class="wordmark" href="/" aria-label="Pour Profit CFO Group, home">
+    <img src="/assets/emblem-128.png" alt="" width="40" height="40">
+    <span class="w1">POUR PROFIT</span><span class="w2">CFO GROUP</span>
   </a>
+  <p class="tagline">REAL NUMBERS. MORE PROFIT.</p>
   <div class="fmeta">
     <a href="/">Home</a>
     <a href="mailto:jennifer@pourprofitcfo.com">jennifer@pourprofitcfo.com</a>
   </div>
-</footer>
+</footer></div>
 
 <script src="/assets/slump-test.js"></script>
 </body>

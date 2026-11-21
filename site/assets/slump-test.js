@@ -126,8 +126,9 @@
     var x = 100 + 80 * Math.cos(ang), y = 105 - 80 * Math.sin(ang);
     var nx = 100 + 62 * Math.cos(ang), ny = 105 - 62 * Math.sin(ang);
     svg.innerHTML =
+      '<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9d6809"/><stop offset="1" stop-color="#ffd35f"/></linearGradient></defs>' +
       '<path d="M20 105 A80 80 0 0 1 180 105" fill="none" stroke="var(--line)" stroke-width="16"/>' +
-      (pct > 0 ? '<path d="M20 105 A80 80 0 0 1 ' + x.toFixed(1) + ' ' + y.toFixed(1) + '" fill="none" stroke="var(--accent)" stroke-width="16"/>' : '') +
+      (pct > 0 ? '<path d="M20 105 A80 80 0 0 1 ' + x.toFixed(1) + ' ' + y.toFixed(1) + '" fill="none" stroke="url(#rg)" stroke-width="16"/>' : '') +
       '<line x1="100" y1="105" x2="' + nx.toFixed(1) + '" y2="' + ny.toFixed(1) + '" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>' +
       '<circle cx="100" cy="105" r="8" fill="var(--ink)"/>';
     return svg;
