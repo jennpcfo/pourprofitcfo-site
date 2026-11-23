@@ -180,6 +180,16 @@ section{ padding-block: clamp(56px, 9vw, 110px); }
   font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; font-weight: 600;
   padding: 3px 8px; border: 1px solid rgba(224,165,30,.45); border-radius: 2px; color: var(--accent-hi);
 }
+.path-2{ grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.stop p + p{ margin-top: 10px; }
+.stop-main{ border-color: rgba(224,165,30,.45); background: linear-gradient(145deg, #1a1d1d, #121414); }
+.steps-list{ margin: 18px 0 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 10px; }
+.steps-list li{ counter-increment: s; display: grid; grid-template-columns: 34px 120px 1fr; gap: 4px 12px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px dashed var(--line); }
+.steps-list li::before{ content: counter(s); font-family: var(--mono); font-weight: 600; font-size: 0.8rem; color: var(--accent-hi); }
+.steps-list strong{ font-family: var(--display); font-weight: 900; font-size: 1.15rem; letter-spacing: 0.04em; color: var(--ink); }
+.steps-list span{ color: var(--ink-soft); font-size: 0.95rem; }
+.exit{ margin-top: 18px; padding: 14px 18px; background: var(--accent-tint); border: 1px solid rgba(224,165,30,.35); border-left: 4px solid var(--accent); border-radius: 4px; color: var(--ink-soft); }
+.exit strong{ color: var(--accent-hi); }
 .addons{
   margin-top: 14px; padding: 22px 26px; border: 1px dashed var(--line); border-radius: 4px;
   display: grid; grid-template-columns: auto 1fr 1fr; gap: 20px 40px; align-items: start;
@@ -221,7 +231,9 @@ footer .wordmark, footer .wordmark:hover{ text-decoration: none; }
   .emblem-stage{ order: -1; justify-self: start; }
   .emblem-stage img{ width: 150px; }
   .emblem-stage::before{ display: none; }
-  .problem-grid, .cols3, .two, .path{ grid-template-columns: 1fr; }
+  .problem-grid, .cols3, .two, .path, .path-2{ grid-template-columns: 1fr; }
+  .steps-list li{ grid-template-columns: 28px 1fr; }
+  .steps-list span{ grid-column: 2; }
   .test-band{ grid-template-columns: 1fr; }
   .test-band .meter{ display: none; }
   .addons{ grid-template-columns: 1fr; }
