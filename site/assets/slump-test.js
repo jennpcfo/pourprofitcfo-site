@@ -188,7 +188,7 @@
     var next = el("div", { class: "next" });
     next.appendChild(el("div", { class: "eyebrow" }, "Your next step"));
     next.appendChild(el("h3", { style: "margin-top:8px" }, "The Overhead Check: $950"));
-    next.appendChild(el("p", null, "We compare the margin you're earning with the margin you need, loan payments included, put a dollar figure on the yearly gap, check how your bids are built, and go over your three most important next steps on a 45-minute call with Jenn. Results in 5 business days, and the $950 counts toward the INSPECTION if you go further."));
+    next.appendChild(el("p", null, "We compare the margin you're earning with the margin you need, loan payments included, put a dollar figure on the yearly gap, check how your bids are built, and go over your three most important next steps on a 45-minute call with Jenn. Results in 5 business days, and the $950 counts toward the PROFIT TRANSFORMATION INTENSIVE if you go further."));
     var br = el("div", { class: "btn-row" });
     br.appendChild(el("a", { class: "btn", href: BOOK, target: "_blank", rel: "noopener" }, "Book a free call to get started"));
     br.appendChild(el("a", { class: "btn btn-ghost", href: "/#overhead-check" }, "What's in the Overhead Check"));
